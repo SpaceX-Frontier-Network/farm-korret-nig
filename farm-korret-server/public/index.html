@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a5c3a" />
+  <meta name="description" content="Farm Korret Nig. — Agribusiness, Finance, Heavy Equipment & Veterinary Health. Premium farm solutions across Nigeria. RC-8163754." />
+  <title>Farm Korret Nig. | Agribusiness, Finance, Equipment & Vet Health</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <link rel="icon" href="{{ url_for('static', filename='logo.svg') }}" />
+</head>
+<body class="is-loading">
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-bg"></div>
+    <div class="preloader-inner">
+      <div class="preloader-logo-wrap">
+        <div class="preloader-ring"></div>
+        <div class="preloader-ring ring-2"></div>
+        <img src="{{ url_for('static', filename='logo.svg') }}" alt="Farm Korret Nig." class="preloader-logo" />
+      </div>
+      <div class="preloader-brand">
+        <span class="preloader-name">Farm Korret</span>
+        <span class="preloader-nig">Nig.</span>
+      </div>
+      <p class="preloader-tagline">Agribusiness · Finance · Equipment · Vet Health</p>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar" id="preloaderBar"></div>
+      </div>
+      <div class="preloader-status">
+        <span class="preloader-pct" id="preloaderPct">0%</span>
+        <span class="preloader-msg" id="preloaderMsg">Initializing system…</span>
+      </div>
+    </div>
+    <div class="preloader-footer">RC-8163754</div>
+  </div>
+
+  <div class="bg-glow"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <img src="{{ url_for('static', filename='logo.svg') }}" alt="Farm Korret Nig." class="logo-img" />
+        <span class="logo-text">Farm Korret<span>Nig.</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#produce" class="nav-link">Produce</a>
+        <a href="#livestock" class="nav-link">Livestock</a>
+        <a href="#equipment" class="nav-link">Equipment</a>
+        <a href="#vet" class="nav-link">Vet Health</a>
+        <a href="#finance" class="nav-link">Finance</a>
+        <a href="#contact" class="nav-link cta-nav">Get Started</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#produce" class="mobile-link">Produce</a>
+    <a href="#livestock" class="mobile-link">Livestock</a>
+    <a href="#equipment" class="mobile-link">Equipment</a>
+    <a href="#vet" class="mobile-link">Vet Health</a>
+    <a href="#finance" class="mobile-link">Finance</a>
+    <a href="#contact" class="mobile-link mobile-cta">Get Started</a>
+  </div>
+
+  <main>
+    <!-- HERO with farm imagery -->
+    <section class="hero" id="home">
+      <div class="hero-media">
+        <img
+          src="https://images.unsplash.com/photo-1500937386664-56d7dfcf9d5b?w=1600&q=80"
+          alt="Green farm fields at sunrise"
+          class="hero-bg-img"
+          fetchpriority="high"
+        />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <div class="badge">RC-8163754 · Full-Spectrum Agribusiness</div>
+        <h1>From soil to livestock,<br /><em>we grow with you</em></h1>
+        <p class="hero-sub">
+          Premium produce, healthy animals, reliable machinery, veterinary care,
+          and farm finance — delivered with quality and care across Nigeria.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">
+            <span>Request a Quote</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#services" class="btn btn-ghost-light">Explore Services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num" data-count="98">0</span><span class="stat-suffix">%</span>
+            <span class="stat-label">Satisfaction</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-count="500">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Farms Served</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-count="4">0</span><span class="stat-suffix"></span>
+            <span class="stat-label">Core Services</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust strip -->
+    <section class="trust-bar">
+      <div class="trust-item"><span class="trust-icon">✅</span><span>RC-8163754 Registered</span></div>
+      <div class="trust-item"><span class="trust-icon">🌾</span><span>Crop & Livestock</span></div>
+      <div class="trust-item"><span class="trust-icon">🩺</span><span>Veterinary Care</span></div>
+      <div class="trust-item"><span class="trust-icon">🚜</span><span>Heavy Equipment</span></div>
+      <div class="trust-item"><span class="trust-icon">💚</span><span>Customer First</span></div>
+    </section>
+
+    <!-- SERVICES - 4 pillars -->
+    <section class="section services" id="services">
+      <div class="section-header center">
+        <span class="section-label">What We Offer</span>
+        <h2>Four pillars. One trusted partner.</h2>
+        <p>Everything modern farms need — produce, animals, machinery, health, and finance — under one roof.</p>
+      </div>
+      <div class="services-grid four">
+        <article class="service-card has-img">
+          <div class="service-img-wrap">
+            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80" alt="Fresh vegetable harvest" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <h3>Agribusiness</h3>
+            <p>Premium farm produce, inputs, and full crop solutions from field to market.</p>
+            <a href="#produce" class="service-link">View Produce →</a>
+          </div>
+        </article>
+        <article class="service-card has-img">
+          <div class="service-img-wrap">
+            <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=600&q=80" alt="Healthy cattle on farm" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <h3>Livestock & Animals</h3>
+            <p>Quality livestock support, animal husbandry guidance, and healthy stock.</p>
+            <a href="#livestock" class="service-link">Explore Livestock →</a>
+          </div>
+        </article>
+        <article class="service-card has-img featured">
+          <div class="service-img-wrap">
+            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80" alt="Farm tractor in field" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <span class="service-badge">Core</span>
+            <h3>Heavy Equipment</h3>
+            <p>Tractors, implements, sales, rental and maintenance support.</p>
+            <a href="#equipment" class="service-link">Browse Equipment →</a>
+          </div>
+        </article>
+        <article class="service-card has-img">
+          <div class="service-img-wrap">
+            <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=600&q=80" alt="Veterinary care for farm animals" loading="lazy" />
+          </div>
+          <div class="service-body">
+            <h3>Veterinary Health</h3>
+            <p>Animal health, vaccines, treatment guidance and farm biosecurity.</p>
+            <a href="#vet" class="service-link">Vet Services →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRODUCE - premium product grid with photos -->
+    <section class="section produce" id="produce">
+      <div class="section-header">
+        <span class="section-label">Farm Produce</span>
+        <h2>Vegetables & crops,<br />fresh from the field</h2>
+        <p>Quality-checked produce and farm products. Traceable, carefully handled, delivered with care.</p>
+      </div>
+      <div class="filter-tabs" id="produceFilters">
+        <button class="filter-btn active" data-filter="all" data-type="produce">All</button>
+        <button class="filter-btn" data-filter="leafy" data-type="produce">Leafy Greens</button>
+        <button class="filter-btn" data-filter="root" data-type="produce">Roots & Tubers</button>
+        <button class="filter-btn" data-filter="fruit" data-type="produce">Fruits</button>
+        <button class="filter-btn" data-filter="grains" data-type="produce">Grains</button>
+      </div>
+      <div class="product-grid premium" id="productGrid"></div>
+    </section>
+
+    <!-- LIVESTOCK / ANIMALS -->
+    <section class="section livestock" id="livestock">
+      <div class="livestock-banner">
+        <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1400&q=80" alt="Cattle grazing on green pasture" loading="lazy" />
+        <div class="livestock-banner-content">
+          <span class="section-label light">Livestock & Animals</span>
+          <h2>Healthy stock.<br />Stronger farms.</h2>
+          <p>Support for cattle, goats, poultry and more — from sourcing guidance to husbandry best practice.</p>
+        </div>
+      </div>
+      <div class="animal-grid">
+        <article class="animal-card">
+          <div class="animal-img">
+            <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=500&q=80" alt="Dairy cow" loading="lazy" />
+          </div>
+          <div class="animal-body">
+            <h3>Cattle</h3>
+            <p>Dairy and beef cattle support, breeding advice, and healthy stock connections.</p>
+          </div>
+        </article>
+        <article class="animal-card">
+          <div class="animal-img">
+            <img src="https://images.unsplash.com/photo-1524024973431-2ee2e113b6ba?w=500&q=80" alt="Goats on farm" loading="lazy" />
+          </div>
+          <div class="animal-body">
+            <h3>Goats & Sheep</h3>
+            <p>Small ruminant husbandry, nutrition guidance, and quality animal supply support.</p>
+          </div>
+        </article>
+        <article class="animal-card">
+          <div class="animal-img">
+            <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=500&q=80" alt="Chickens on free range farm" loading="lazy" />
+          </div>
+          <div class="animal-body">
+            <h3>Poultry</h3>
+            <p>Layers, broilers, and poultry farm setup guidance for sustainable production.</p>
+          </div>
+        </article>
+        <article class="animal-card">
+          <div class="animal-img">
+            <img src="https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?w=500&q=80" alt="Pigs on farm" loading="lazy" />
+          </div>
+          <div class="animal-body">
+            <h3>Pigs & Others</h3>
+            <p>Pig production support and other livestock options tailored to your region.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EQUIPMENT -->
+    <section class="section equipment" id="equipment">
+      <div class="section-header">
+        <span class="section-label">Heavy Equipment</span>
+        <h2>Machinery that works<br />as hard as you do</h2>
+        <p>Tractors and implements for land prep, planting and harvest. Buy, rent, or finance.</p>
+      </div>
+      <div class="equipment-grid">
+        <article class="equip-card has-img">
+          <div class="equip-img">
+            <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=600&q=80" alt="Green tractor working field" loading="lazy" />
+          </div>
+          <div class="equip-body">
+            <h3>Utility Tractors</h3>
+            <p>40–75 HP tractors for small to medium farms. Land prep, planting, transport.</p>
+            <div class="equip-tags"><span>Sales</span><span>Rental</span><span>Finance</span></div>
+          </div>
+        </article>
+        <article class="equip-card has-img">
+          <div class="equip-img">
+            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80" alt="Farm implements and machinery" loading="lazy" />
+          </div>
+          <div class="equip-body">
+            <h3>Implements</h3>
+            <p>Ploughs, harrows, planters, trailers — matched to your tractor and soil.</p>
+            <div class="equip-tags"><span>Sales</span><span>Support</span></div>
+          </div>
+        </article>
+        <article class="equip-card has-img">
+          <div class="equip-img">
+            <img src="https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?w=600&q=80" alt="Farm equipment maintenance" loading="lazy" />
+          </div>
+          <div class="equip-body">
+            <h3>Service & Support</h3>
+            <p>Maintenance guidance, parts advice, and after-sales so machines stay productive.</p>
+            <div class="equip-tags"><span>Support</span><span>Training</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- VETERINARY HEALTH -->
+    <section class="section vet" id="vet">
+      <div class="vet-layout">
+        <div class="vet-content">
+          <span class="section-label">Veterinary Health</span>
+          <h2>Healthy animals.<br />Productive farms.</h2>
+          <p>
+            Professional veterinary support for livestock and poultry — prevention,
+            treatment guidance, vaccines, and biosecurity so your animals stay strong.
+          </p>
+          <ul class="vet-features">
+            <li>
+              <div class="feat-icon">💉</div>
+              <div>
+                <strong>Vaccination Programmes</strong>
+                <span>Scheduled protection for cattle, goats, poultry and more</span>
+              </div>
+            </li>
+            <li>
+              <div class="feat-icon">🩺</div>
+              <div>
+                <strong>Treatment Guidance</strong>
+                <span>Diagnosis support and treatment pathways for common conditions</span>
+              </div>
+            </li>
+            <li>
+              <div class="feat-icon">🛡️</div>
+              <div>
+                <strong>Biosecurity</strong>
+                <span>Farm hygiene and disease prevention best practice</span>
+              </div>
+            </li>
+            <li>
+              <div class="feat-icon">📋</div>
+              <div>
+                <strong>Herd Health Plans</strong>
+                <span>Seasonal health calendars tailored to your stock</span>
+              </div>
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="margin-top:24px">
+            <span>Enquire about Vet Services</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="vet-visual">
+          <div class="vet-img-main">
+            <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=700&q=80" alt="Veterinarian examining farm animal" loading="lazy" />
+          </div>
+          <div class="vet-img-side">
+            <img src="https://images.unsplash.com/photo-1596276020530-6b113e2c0c4e?w=400&q=80" alt="Healthy farm livestock" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINANCE -->
+    <section class="section finance" id="finance">
+      <div class="finance-layout">
+        <div class="finance-content">
+          <span class="section-label">Farm Finance</span>
+          <h2>Funding that understands<br />agriculture</h2>
+          <p>Capital for equipment, inputs, livestock, or expansion — with transparent terms and farmer-friendly processes.</p>
+          <ul class="finance-features">
+            <li>
+              <div class="feat-icon">📋</div>
+              <div><strong>Simple Application</strong><span>Clear requirements, guided process</span></div>
+            </li>
+            <li>
+              <div class="feat-icon">⏱️</div>
+              <div><strong>Faster Decisions</strong><span>Quick review so you don’t miss the season</span></div>
+            </li>
+            <li>
+              <div class="feat-icon">🤝</div>
+              <div><strong>Flexible Structures</strong><span>Aligned to harvest and production cycles</span></div>
+            </li>
+            <li>
+              <div class="feat-icon">🔒</div>
+              <div><strong>Transparent Terms</strong><span>No hidden charges. Clear repayment</span></div>
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="margin-top:24px">
+            <span>Apply / Enquire</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="finance-visual">
+          <div class="finance-card">
+            <div class="finance-card-header">Sample Support Options</div>
+            <div class="finance-option"><strong>Equipment Financing</strong><span>Tractor & implement packages</span></div>
+            <div class="finance-option"><strong>Livestock / Stock Finance</strong><span>Animal purchase & scale-up</span></div>
+            <div class="finance-option"><strong>Input Credit</strong><span>Seeds, feed, fertiliser, vaccines</span></div>
+            <div class="finance-option"><strong>Working Capital</strong><span>Seasonal cash flow support</span></div>
+            <p class="finance-note">Terms depend on eligibility. Contact us for a personalised discussion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMISE -->
+    <section class="section promise" id="promise">
+      <div class="section-header center">
+        <span class="section-label">Our Standard</span>
+        <h2>Quality, delivery & satisfaction</h2>
+        <p>We measure success by the trust you place in us — every order, animal, machine, and consultation.</p>
+      </div>
+      <div class="promise-grid">
+        <div class="promise-card">
+          <div class="promise-num">01</div>
+          <h3>Quality First</h3>
+          <p>Produce, animals and equipment meet clear standards before they reach you.</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-num">02</div>
+          <h3>Reliable Delivery</h3>
+          <p>Clear timelines, careful handling, and communication you can count on.</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-num">03</div>
+          <h3>Expert Guidance</h3>
+          <p>Honest advice on crops, livestock, machinery and animal health.</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-num">04</div>
+          <h3>Satisfaction Focus</h3>
+          <p>Fast response, fair resolution, long-term partnerships built on results.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORIES -->
+    <section class="section stories" id="stories">
+      <div class="section-header">
+        <span class="section-label">Trusted by Farmers</span>
+        <h2>What our customers say</h2>
+      </div>
+      <div class="stories-track">
+        <article class="story-card">
+          <div class="story-stars">★★★★★</div>
+          <p>“Produce arrived fresh and on time. Communication was excellent. We’ve made Farm Korret our go-to supplier.”</p>
+          <div class="story-author">
+            <div class="author-avatar">A</div>
+            <div><strong>Adebayo O.</strong><span>Oyo · Produce</span></div>
+          </div>
+        </article>
+        <article class="story-card">
+          <div class="story-stars">★★★★★</div>
+          <p>“Financed a tractor through them. Process was clear and they understood our farming calendar. Strong support.”</p>
+          <div class="story-author">
+            <div class="author-avatar">C</div>
+            <div><strong>Chinedu E.</strong><span>Enugu · Equipment</span></div>
+          </div>
+        </article>
+        <article class="story-card">
+          <div class="story-stars">★★★★★</div>
+          <p>“Vet guidance for our poultry unit helped us cut losses. Practical, timely, and professional.”</p>
+          <div class="story-author">
+            <div class="author-avatar">F</div>
+            <div><strong>Fatima S.</strong><span>Kaduna · Vet Health</span></div>
+          </div>
+        </article>
+        <article class="story-card">
+          <div class="story-stars">★★★★★</div>
+          <p>“Reliable partner for livestock and inputs. They treat every enquiry with respect and follow through.”</p>
+          <div class="story-author">
+            <div class="author-avatar">I</div>
+            <div><strong>Ibrahim M.</strong><span>Kano · Livestock</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section order" id="contact">
+      <div class="order-card">
+        <div class="order-left">
+          <span class="section-label light">Let’s work together</span>
+          <h2>Get started with Farm Korret</h2>
+          <p>Produce, livestock, equipment, veterinary care, or finance — tell us what you need. We’ll respond with clear next steps.</p>
+          <div class="order-perks">
+            <div class="perk">✓ Fast response in business hours</div>
+            <div class="perk">✓ Transparent quotes & advice</div>
+            <div class="perk">✓ Quality & delivery commitment</div>
+            <div class="perk">✓ RC-8163754 registered</div>
+          </div>
+        </div>
+        <form class="order-form" id="orderForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp</label>
+              <input type="tel" id="phone" name="phone" placeholder="+234..." required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="interest">I’m interested in</label>
+            <select id="interest" name="interest" required>
+              <option value="">Select...</option>
+              <option value="produce">Farm Produce / Supply</option>
+              <option value="livestock">Livestock / Animals</option>
+              <option value="equipment-buy">Heavy Equipment — Buy</option>
+              <option value="equipment-rent">Heavy Equipment — Rent</option>
+              <option value="vet">Veterinary Health</option>
+              <option value="finance">Farm Finance</option>
+              <option value="combo">Multiple services</option>
+              <option value="other">Other enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="location">Location / State</label>
+            <input type="text" id="location" name="location" placeholder="e.g. Lagos, Ogun, Kano..." required />
+          </div>
+          <div class="form-group">
+            <label for="message">Details / Requirements</label>
+            <textarea id="message" name="message" rows="3" placeholder="Quantities, animal type, equipment needs, timeline..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>Send Enquiry</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <p class="form-note">We typically respond within a few business hours via call or WhatsApp.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <img src="{{ url_for('static', filename='logo.svg') }}" alt="Farm Korret Nig." class="logo-img footer-logo" />
+          <span class="logo-text">Farm Korret<span>Nig.</span></span>
+        </a>
+        <p>Agribusiness, Finance, Heavy Equipment & Veterinary Health. Serving farmers across Nigeria with quality and care.</p>
+        <p class="rc">RC-8163754</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#produce">Farm Produce</a>
+          <a href="#livestock">Livestock</a>
+          <a href="#equipment">Heavy Equipment</a>
+          <a href="#vet">Veterinary Health</a>
+          <a href="#finance">Farm Finance</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#promise">Our Promise</a>
+          <a href="#stories">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="#contact">Send Enquiry</a>
+          <a href="#">WhatsApp</a>
+          <a href="#">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Farm Korret Nig. All rights reserved.</span>
+      <span>Quality · Delivery · Customer Satisfaction</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">
+    <span class="toast-icon">✓</span>
+    <span class="toast-msg">Enquiry received! We’ll get back to you shortly.</span>
+  </div>
+
+  <button class="cart-fab" id="cartFab" aria-label="View selection">
+    <span class="cart-icon">🧺</span>
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <h3>Your Selection</h3>
+      <button class="drawer-close" id="drawerClose" aria-label="Close">×</button>
+    </div>
+    <div class="drawer-body" id="cartItems">
+      <p class="empty-cart">No items yet. Browse produce and add what you need.</p>
+    </div>
+    <div class="drawer-footer">
+      <div class="cart-total">
+        <span>Estimated</span>
+        <strong id="cartTotal">₦0</strong>
+      </div>
+      <a href="#contact" class="btn btn-primary btn-full" id="checkoutBtn">Continue to Enquiry</a>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

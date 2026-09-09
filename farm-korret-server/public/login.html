@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Sign In — Frontier</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            min-height: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: Inter, system-ui, sans-serif;
+            color: #f6efe6;
+            min-height: 100vh;
+            min-height: 100dvh;
+            background: #120904 url('login-bg.jpg') center / cover no-repeat;
+            background-position: 28% center;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .stage {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: grid;
+            grid-template-columns: 1.15fr minmax(320px, 440px);
+            align-items: stretch;
+        }
+
+        .scene {
+            position: relative;
+            min-height: 100vh;
+            min-height: 100dvh;
+        }
+
+        .scene-copy {
+            position: absolute;
+            left: max(2rem, env(safe-area-inset-left));
+            bottom: max(2rem, env(safe-area-inset-bottom));
+            max-width: 340px;
+            text-shadow: 0 8px 28px rgba(0,0,0,.55);
+        }
+
+        .scene-copy .kicker {
+            font-family: Orbitron, sans-serif;
+            letter-spacing: .22em;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #ffd7a8;
+            margin-bottom: .6rem;
+        }
+
+        .scene-copy h2 {
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 700;
+            line-height: 1.15;
+        }
+
+        .panel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: max(2rem, env(safe-area-inset-top)) max(1.5rem, env(safe-area-inset-right)) max(2rem, env(safe-area-inset-bottom)) 1.5rem;
+            background: linear-gradient(180deg, rgba(18,8,4,.28) 0%, rgba(18,8,4,.62) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-left: 1px solid rgba(255, 196, 140, .18);
+        }
+
+        .card {
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: .7rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(160deg, #ffb15a, #e25a18);
+            box-shadow: 0 8px 24px rgba(226, 90, 24, .35);
+        }
+
+        .brand span {
+            font-family: Orbitron, sans-serif;
+            font-weight: 700;
+            letter-spacing: .08em;
+            font-size: .92rem;
+        }
+
+        h1 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            margin-bottom: .35rem;
+        }
+
+        .sub {
+            color: #d9c4b0;
+            font-size: .92rem;
+            margin-bottom: 1.6rem;
+        }
+
+        label {
+            display: block;
+            font-size: .8rem;
+            color: #e8d3bf;
+            margin-bottom: .4rem;
+        }
+
+        .field { margin-bottom: 1rem; position: relative; }
+
+        .form-input {
+            width: 100%;
+            height: 48px;
+            padding: 0 1rem 0 2.6rem;
+            border: 1px solid rgba(255, 214, 170, .22);
+            border-radius: 12px;
+            background: rgba(20, 10, 6, .45);
+            color: #fff8f0;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: #ffb15a;
+            box-shadow: 0 0 0 3px rgba(255, 177, 90, .18);
+        }
+
+        .form-input.error { border-color: #ef4444; }
+        .form-input.success { border-color: #3dd68c; }
+
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #c9ad96;
+            pointer-events: none;
+        }
+
+        .field-pass .form-input { padding-right: 2.6rem; }
+
+        #togglePassword {
+            position: absolute;
+            right: .85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: 0;
+            color: #c9ad96;
+            cursor: pointer;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: .75rem;
+            margin: .3rem 0 1.2rem;
+            font-size: .85rem;
+            color: #d9c4b0;
+        }
+
+        .row a { color: #ffc07a; text-decoration: none; font-weight: 600; }
+
+        .btn-primary {
+            width: 100%;
+            height: 48px;
+            border: 0;
+            border-radius: 12px;
+            background: linear-gradient(180deg, #ffb15a, #e25a18);
+            color: #1a0c06;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 10px 28px rgba(226, 90, 24, .35);
+        }
+
+        .btn-primary:disabled { opacity: .65; cursor: not-allowed; }
+
+        .split {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            margin: 1.15rem 0;
+            color: #c9ad96;
+            font-size: .72rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .split::before, .split::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(255,214,170,.2);
+        }
+
+        .social {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: .65rem;
+        }
+
+        .social button {
+            height: 46px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,214,170,.2);
+            background: rgba(20,10,6,.35);
+            color: #f6efe6;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .signup {
+            text-align: center;
+            margin-top: 1.15rem;
+            color: #d9c4b0;
+            font-size: .9rem;
+        }
+
+        .signup a { color: #ffc07a; font-weight: 600; text-decoration: none; }
+
+        .auth-error {
+            display: none;
+            margin-bottom: 1rem;
+            padding: .7rem .85rem;
+            border-radius: 10px;
+            background: rgba(239,68,68,.14);
+            border: 1px solid rgba(239,68,68,.35);
+            color: #ff8d8d;
+            font-size: .85rem;
+        }
+        .auth-error.show { display: block; }
+        .err { color: #ff8d8d; font-size: .75rem; margin-top: .3rem; display: none; }
+        .err.show { display: block; }
+
+        .legal {
+            margin-top: 1.4rem;
+            text-align: center;
+            font-size: 10px;
+            letter-spacing: .08em;
+            color: rgba(217,196,176,.7);
+        }
+
+        @media (max-width: 900px) {
+            .stage { grid-template-columns: 1fr; }
+            .scene { min-height: 34vh; min-height: 34dvh; }
+            .scene-copy { max-width: 80%; }
+            .panel {
+                border-left: 0;
+                border-top: 1px solid rgba(255,196,140,.18);
+                background: linear-gradient(180deg, rgba(18,8,4,.55), rgba(18,8,4,.82));
+                align-items: flex-start;
+            }
+            body { background-position: 30% 20%; }
+        }
+
+        @media (max-width: 480px) {
+            .scene { min-height: 28vh; }
+            .scene-copy { left: 1rem; bottom: 1rem; }
+            .panel { padding: 1.25rem 1rem 1.75rem; }
+            .social { grid-template-columns: 1fr; }
+            .row { flex-wrap: wrap; }
+        }
+
+        @media (max-height: 560px) and (orientation: landscape) {
+            .stage { grid-template-columns: .7fr 1fr; }
+            .scene-copy h2 { font-size: 1.2rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; animation: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <section class="scene" aria-hidden="true">
+            <div class="scene-copy">
+                <div class="kicker">Mission control</div>
+                <h2>Return to the frontier.</h2>
+            </div>
+        </section>
+
+        <aside class="panel">
+            <div class="card">
+                <div class="brand">
+                    <div class="brand-mark"><i class="fas fa-rocket"></i></div>
+                    <span>FRONTIER</span>
+                </div>
+
+                <h1>Sign in</h1>
+                <p class="sub">Access your station dashboard.</p>
+
+                <form id="loginForm" novalidate>
+                    <div id="authError" class="auth-error">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span id="authErrorMessage"> Invalid credentials.</span>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email or username</label>
+                        <i class="fas fa-user input-icon"></i>
+                        <input class="form-input" id="email" type="text" autocomplete="username" value="admin" required />
+                        <div class="err" id="emailError">Enter a valid username</div>
+                    </div>
+
+                    <div class="field field-pass">
+                        <label for="password">Password</label>
+                        <i class="fas fa-lock input-icon"></i>
+                        <input class="form-input" id="password" type="password" autocomplete="current-password" value="admintest" required />
+                        <button type="button" id="togglePassword" aria-label="Show password"><i class="fas fa-eye"></i></button>
+                        <div class="err" id="passwordError">Enter your password</div>
+                    </div>
+
+                    <div class="row">
+                        <label><input type="checkbox" checked /> Remember me</label>
+                        <a href="#" id="forgotPasswordLink">Forgot password?</a>
+                    </div>
+
+                    <button class="btn-primary" id="submitBtn" type="submit">
+                        <span id="submitText">Sign In</span>
+                        <span id="submitSpinner" style="display:none"><i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+
+                    <div class="split">or</div>
+
+                    <div class="social">
+                        <button type="button" class="btn-google"><i class="fab fa-google"></i> Google</button>
+                        <button type="button" class="btn-apple"><i class="fab fa-apple"></i> Apple</button>
+                    </div>
+
+                    <p class="signup">No account? <a href="signup.html">Sign up</a></p>
+                    <p class="legal">Educational demo — not affiliated with SpaceX or Tesla</p>
+                </form>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const passwordInput = document.getElementById('password');
+            const togglePassword = document.getElementById('togglePassword');
+            togglePassword.addEventListener('click', function () {
+                const show = passwordInput.type === 'password';
+                passwordInput.type = show ? 'text' : 'password';
+                this.querySelector('i').className = show ? 'fas fa-eye-slash' : 'fas fa-eye';
+            });
+
+            const form = document.getElementById('loginForm');
+            const email = document.getElementById('email');
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const submitSpinner = document.getElementById('submitSpinner');
+            const authError = document.getElementById('authError');
+            const authErrorMessage = document.getElementById('authErrorMessage');
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+
+            function mark(input, errorEl, ok, message) {
+                input.classList.toggle('error', !ok);
+                input.classList.toggle('success', ok);
+                errorEl.textContent = message;
+                errorEl.classList.toggle('show', !ok);
+                return ok;
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const userOk = mark(email, emailError, email.value.trim().length >= 3, 'Enter a valid username');
+                const passOk = mark(passwordInput, passwordError, passwordInput.value.length > 0, 'Enter your password');
+                if (!userOk || !passOk) return;
+
+                if (email.value.trim() === 'admin' && passwordInput.value.trim() === 'admintest') {
+                    submitBtn.disabled = true;
+                    submitText.textContent = 'Signing in...';
+                    submitSpinner.style.display = 'inline';
+                    setTimeout(function () { window.location.href = 'account.html'; }, 900);
+                } else {
+                    authError.classList.add('show');
+                    authErrorMessage.textContent = ' Invalid username or password.';
+                }
+            });
+
+            document.getElementById('forgotPasswordLink').addEventListener('click', function (e) {
+                e.preventDefault();
+                alert('Password reset is a demo only.');
+            });
+            document.querySelector('.btn-google').addEventListener('click', function () {
+                alert('Google sign-in is a demo only.');
+            });
+            document.querySelector('.btn-apple').addEventListener('click', function () {
+                alert('Apple sign-in is a demo only.');
+            });
+        });
+    </script>
+</body>
+</html>
