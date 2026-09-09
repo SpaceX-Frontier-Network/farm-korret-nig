@@ -1,0 +1,23 @@
+{
+  "name": "Farm Korret Nig. — Premium Agribusiness",
+  "short_name": "Farm Korret",
+  "description": "Agribusiness, Finance, Equipment & Veterinary Health across Nigeria.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#061510",
+  "theme_color": "#d4af37",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' fill='%23061510'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='100' dy='.35em' fill='%23d4af37'%3E🌾%3C/text%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23061510'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='250' dy='.35em' fill='%23d4af37'%3E🌾%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
